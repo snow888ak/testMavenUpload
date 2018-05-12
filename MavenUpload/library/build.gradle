@@ -33,20 +33,5 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 }
 
-apply plugin: 'com.novoda.bintray-release'
-
-publish {
-    userOrg = 'kezhong1986'//用户名
-    repoName = 'kezhong1986'//仓库名
-    groupId = 'com.kezhong1986.app.test'
-    artifactId = 'testMavenUpload'
-    publishVersion  = '1.0.0'
-    desc = 'test upload android aar to maven'
-    website = 'https://github.com/snow888ak/testMavenUpload'
-}
-
-tasks.withType(Javadoc) {//防止编码问题
-    options.addStringOption('Xdoclint:none', '-quiet')
-    options.addStringOption('encoding', 'UTF-8')
-    options.addStringOption('charSet', 'UTF-8')
-}
+apply plugin: 'com.github.dcendents.android-maven'
+group='com.github.snow888ak'
